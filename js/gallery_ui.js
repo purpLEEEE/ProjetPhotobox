@@ -1,3 +1,5 @@
+import lightbox from './lightbox.js'
+
 /**
  * Ajoute et affiche le markup HTML de la galerie courante
  * @param { object } gallery 
@@ -21,6 +23,7 @@ let display_picture = (global_picture) => {
   let picture_container = document.createElement('div')
   picture_container.innerHTML = picture_content
   picture_container.classList.add('vignette')
+  picture_container.addEventListener('click', (e) => lightbox.load(e.target))
   return picture_container
 }
 

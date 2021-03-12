@@ -5,8 +5,8 @@ import photoloader from './photoloader.js'
  * @param { Number } offset numero d'image a partir de laquelle la requete charge les photos
  * @param { Number } size nombre d'images que la requete doit charger
  */
-let load = (offset, size) => {
-  return photoloader.loadResource(offset, size)
+let load = (uri) => {
+  return photoloader.loadResource(uri)
 }
 
 export default {

@@ -122,8 +122,22 @@ nav #next {
 
 }
 #lightbox-head {
+    padding-top: 1rem ;
+    display: flex;
+    justify-content: center;
     height: 8%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     color: floralwhite;
+}
+
+#lightbox_title {
+  font-size: 1.5rem;
+}
+
+#lightbox_close {
+  cursor: pointer;
+  position: absolute;
+  right: 21%;
+  top: 3%;
 }
