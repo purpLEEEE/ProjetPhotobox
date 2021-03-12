@@ -6,6 +6,7 @@ import lightbox from './lightbox.js'
  */
 let display_gallery = (gallery) => {
   let gallery_container = document.querySelector('#gallery_container')
+  gallery_container.innerHTML = ""
   gallery.photos.forEach(picture => {
     gallery_container.appendChild(display_picture(picture))
   });

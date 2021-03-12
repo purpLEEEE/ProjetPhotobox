@@ -3,8 +3,7 @@ import gallery_ui from '/js/gallery_ui.js'
 
 /**
  *  Charge la gallerie et l'affiche sur la page
- * @param { Number } offset numero d'image a partir de laquelle la requete charge les photos
- * @param { Number } size nombre d'images que la requete doit charger
+ * @param { String } uri chemin de la gallerie a afficher
  */
 const getRessource = (uri) => {
   gallery.load(uri)

@@ -1,5 +1,8 @@
+/**
+ * recoit les donnees d'une image et affichage la lightbox de celle-ci
+ * @param { Object } data donnees de l'image a afficher
+ */
 let display_lightbox = (data) => {
-  console.log(data)
   let html = `
   <div id="lightbox">
     <div id="lightbox-head">
@@ -14,18 +17,27 @@ let display_lightbox = (data) => {
     </div>
   </div>
   `
-  show(html)
+  document.querySelector('#lightbox_container').innerHTML = html
+  show()
   document.querySelector('#lightbox_close').addEventListener('click', hide)
 } 
 
-let show = (html) => {
-  document.querySelector('#lightbox_container').innerHTML = html
+/**
+ * rend visible la lightbox
+ */
+let show = () => {
+  document.querySelector('#lightbox_container').classList.remove('lightbox_container--hidden')
+  document.querySelector('#lightbox_container').classList.add('lightbox_container--visible')
 }
 
-
+/**
+ * rend invisible la lightbox
+ */
 let hide = () => {
-  document.querySelector('#lightbox_container').innerHTML = ""
+  document.querySelector('#lightbox_container').classList.remove('lightbox_container--visible')
+  document.querySelector('#lightbox_container').classList.add('lightbox_container--hidden')
 }
+
 export default {
   display_lightbox
 }
