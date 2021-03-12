@@ -15,6 +15,17 @@ let display_lightbox = (data) => {
     <div id="lightbox-img">
         <img id="lightbox_full_img" src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/large/${data.photo.file}">
     </div>
+
+    <div id="lightbox-details">
+        <h1> Picture Informations</h1>
+        <h2> <strong> Picture Title :</strong> ${data.photo.titre}</h2>
+        <p> <strong> Description :</strong>  ${data.photo.descr} </p>
+        <p> <strong> File name :</strong>  ${data.photo.file} </p>
+        <p> <strong> File size :</strong>  ${data.photo.size} </p>
+        <p> <strong> File dimensions :</strong>  ${data.photo.width} x ${data.photo.height}  </p>
+        <p> <strong> Picture url :</strong>  ${data.photo.url.href} </p>
+
+        </div>
   </div>
   `
   document.querySelector('#lightbox_container').innerHTML = html

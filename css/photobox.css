@@ -6,10 +6,10 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -21,7 +21,6 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline; }
 
@@ -106,7 +105,7 @@ nav #next {
 }
 
 #lightbox {
-    width: 80vw;
+    max-width: 100vw;
     margin: 2rem auto;
     border-radius: 5px;
     height: 100%;
@@ -114,8 +113,9 @@ nav #next {
 
 #lightbox-img {
     width: 100%;
-    height: 100%;
+    height: 80%;
     position:relative;
+    margin-bottom: 1rem;
 }
 
 #lightbox-img img {
@@ -123,9 +123,8 @@ nav #next {
     margin: auto;
     width: auto;
     height: auto;
-    max-height: 80%;
-    max-width: 80%;
-
+    max-height: 100%;
+    max-width: 100%;
 }
 #lightbox-head {
     padding-top: 1rem ;
@@ -146,4 +145,17 @@ nav #next {
   position: absolute;
   right: 21%;
   top: 5.5%;
+}
+
+#lightbox-details {
+  padding: 1rem;
+  background-color: white;
+}
+
+#lightbox-details > h1 {
+  text-align: center;
+}
+
+#lightbox-details > p {
+  font-size: 1.3rem;
 }
