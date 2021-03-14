@@ -172,19 +172,32 @@ nav #next {
 
 #lightbox-details {
   padding: 1rem;
-  background-color: white;
 }
 
-#lightbox-details > h1 {
+#lightbox-details > #lightbox-commons-data {
+  background-color: rgb(245, 245, 245);
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgb(195, 195, 195);
+}
+
+#lightbox-details > #lightbox-commons-data > h1, #lightbox-comments > h1 {
   text-align: center;
 }
 
-#lightbox-details > p {
+#lightbox-details > #lightbox-commons-data > p {
   font-size: 1.3rem;
 }
 
-#lightbox-comments > .comment {
+#lightbox-comments {
+  margin: 3rem 0;
+  padding: 1rem;
   background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+}
+
+#lightbox-comments > .comment {
+  background-color: rgb(231, 231, 231);
   margin-bottom: 1rem;
   border: 1px solid rgb(195, 195, 195);
   border-radius: 5px;
