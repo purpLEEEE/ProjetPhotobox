@@ -25,9 +25,36 @@ let display_lightbox = (data) => {
         <p> <strong> File dimensions :</strong>  ${data.photo.width} x ${data.photo.height}  </p>
         <p> <strong> Picture url :</strong>  ${data.photo.url.href} </p>
 
+        <div id="lightbox-comments">
+          <h2> <strong> Comments :</strong></h2>
+
+  `
+
+  data.comments.forEach(comment => {
+    html += `
+      <div class="comment">
+        <div id="comment-header">
+          <img src="/img/user.svg">
+          <div>
+            <p><strong>${comment.pseudo}</strong> </p>
+            <p> ${comment.titre} </p>
+            <p id="date">posted the ${comment.date} </p>
+          </div>
         </div>
+        <div id="comment-content">
+       
+          <p> ${comment.content} </p>
+        </div>
+      </div> 
+    `
+  });
+
+  html += `   
+      </div>
+    </div>
   </div>
   `
+  
   document.querySelector('#lightbox_container').innerHTML = html
   show()
   document.querySelector('#lightbox_close').addEventListener('click', hide)

@@ -46,6 +46,26 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+@font-face {
+  font-family: "Segoe UI regular";
+  src: url("/font/Segoe\ UI.ttf") format("woff");
+
+  font-family: "Segoe UI bold";
+  src: url("/font/Segoe\ UI\ Bold.ttf") format("woff");
+
+  font-family: "Segoe UI italic";
+  src: url("/font/Segoe\ UI\ Italic.ttf") format("woff");
+}
+
+
+* {
+  font-family: "Segoe UI regular";
+}
+
+h1, strong {
+  font-family: "Segoe UI bold";
+}
 /* end reset */
 
 
@@ -159,3 +179,37 @@ nav #next {
 #lightbox-details > p {
   font-size: 1.3rem;
 }
+
+#lightbox-comments > .comment {
+  background-color: rgb(245, 245, 245);
+  margin-bottom: 1rem;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 5px;
+}
+
+#lightbox-comments > .comment > #comment-header {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border-bottom: 1px solid rgb(195, 195, 195);
+}
+
+#lightbox-comments > .comment > #comment-header, #lightbox-comments > .comment > #comment-header > div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+}
+
+#lightbox-comments > .comment > #comment-header > img {
+  width: 2.5rem;
+}
+
+#lightbox-comments > .comment > #comment-header > div > #date {
+  font-family: "Segoe UI italic";
+  color: rgb(87, 85, 85);
+}
+
+#lightbox-comments > .comment > #comment-content {
+  padding: 0.5rem;
+}
+
+
