@@ -48,23 +48,26 @@ table {
   border-spacing: 0; }
 
 @font-face {
-  font-family: "Segoe UI regular";
-  src: url("/font/Segoe\ UI.ttf") format("woff");
-
-  font-family: "Segoe UI bold";
-  src: url("/font/Segoe\ UI\ Bold.ttf") format("woff");
-
-  font-family: "Segoe UI italic";
-  src: url("/font/Segoe\ UI\ Italic.ttf") format("woff");
+  font-family: "Raleway";
+  src: url("/font/Raleway-Regular.ttf") format("woff");
 }
 
+@font-face {
+  font-family: "Raleway semibold";
+  src: url("/font/Raleway-SemiBold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Raleway italic";
+  src: url("/font/Raleway-Italic.ttf") format("woff");
+}
 
 * {
-  font-family: "Segoe UI regular";
+  font-family: "Raleway";
 }
 
 h1, strong {
-  font-family: "Segoe UI bold";
+  font-family: "Raleway semibold";
 }
 /* end reset */
 
@@ -204,7 +207,7 @@ nav #next {
 }
 
 #lightbox-comments > .comment > #comment-header > div > #date {
-  font-family: "Segoe UI italic";
+  font-family: "Raleway italic";
   color: rgb(87, 85, 85);
 }
 
