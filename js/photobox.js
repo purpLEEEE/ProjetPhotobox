@@ -20,3 +20,43 @@ document.querySelector('#load_gallery')
   .addEventListener('click',  e => {
     getRessource("/www/canals5/photobox/photos/?offset=0&size=10")
 })
+
+/**
+ * Ajoute le listener sur le bouton pour passer à la prochaine galerie
+ */
+document.querySelector('#next')
+  .addEventListener('click', e => {
+    gallery.next().then(response => {
+      gallery_ui.display_gallery(response)
+    })
+  })
+
+/**
+ * Ajoute le listener sur le bouton pour passer à la galerie précédente
+ */
+document.querySelector('#previous')
+.addEventListener('click', e => {
+  gallery.prev().then(response => {
+    gallery_ui.display_gallery(response)
+  })
+})
+
+/**
+ * Ajoute le listener sur le bouton pour passer à la première galerie
+ */
+document.querySelector('#first')
+.addEventListener('click', e => {
+  gallery.first().then(response => {
+    gallery_ui.display_gallery(response)
+  })
+})
+
+/**
+ * Ajoute le listener sur le bouton pour passer à la dernière galerie
+ */
+document.querySelector('#last')
+.addEventListener('click', e => {
+  gallery.last().then(response => {
+    gallery_ui.display_gallery(response)
+  })
+})
