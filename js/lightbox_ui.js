@@ -7,10 +7,10 @@ import lightbox from "./lightbox.js";
 let display_lightbox = (data) => {
   let html = `
   <div id="lightbox">
-      <button id="fleche_gauche" type="button">Prev</button>
-      <button id="fleche_droite" type="button">Next</button>
       <div id="lightbox-head">
+          <button id="fleche_gauche" type="button">Prev</button>
           <h1 id="lightbox_title">${data.photo.titre}</h1>
+          <button id="fleche_droite" type="button">Next</button>
           <div id="lightbox_close">
             <p>X</p>
           </div>
