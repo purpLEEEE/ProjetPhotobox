@@ -22,7 +22,7 @@ document.querySelector('#load_gallery')
 })
 
 /**
- * Ajoute le listener sur le bouton pour passer à la prochaine galerie
+ * Ajoute le listener sur le bouton pour passer à la prochaine page de la galerie
  */
 document.querySelector('#next')
   .addEventListener('click', e => {
@@ -32,7 +32,7 @@ document.querySelector('#next')
   })
 
 /**
- * Ajoute le listener sur le bouton pour passer à la galerie précédente
+ * Ajoute le listener sur le bouton pour passer à la page précédente de la galerie 
  */
 document.querySelector('#previous')
 .addEventListener('click', e => {
@@ -42,7 +42,7 @@ document.querySelector('#previous')
 })
 
 /**
- * Ajoute le listener sur le bouton pour passer à la première galerie
+ * Ajoute le listener sur le bouton pour passer à la première page de la galerie
  */
 document.querySelector('#first')
 .addEventListener('click', e => {
@@ -52,7 +52,7 @@ document.querySelector('#first')
 })
 
 /**
- * Ajoute le listener sur le bouton pour passer à la dernière galerie
+ * Ajoute le listener sur le bouton pour passer à la dernière page de la galerie
  */
 document.querySelector('#last')
 .addEventListener('click', e => {

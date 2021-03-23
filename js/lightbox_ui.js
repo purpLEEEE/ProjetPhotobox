@@ -30,6 +30,7 @@ let display_lightbox = (data) => {
         </div>
         <div id="lightbox-comments">
           <h1>Comments</h1>
+          <div id="comments-list">
   `
 
   data.comments.forEach(comment => {
@@ -50,7 +51,9 @@ let display_lightbox = (data) => {
     `
   });
 
+
   html += `
+    </div>
     <div id="comment-post">
       <h1> Post a comment </h1>
       <form id="post-form">

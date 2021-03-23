@@ -196,35 +196,35 @@ nav #next {
   border-radius: 5px;
 }
 
-#lightbox-comments > .comment {
+#lightbox-comments > #comments-list > .comment {
   background-color: rgb(231, 231, 231);
   margin-bottom: 1rem;
   border: 1px solid rgb(195, 195, 195);
   border-radius: 5px;
 }
 
-#lightbox-comments > .comment > #comment-header {
+#lightbox-comments > #comments-list > .comment > #comment-header {
   padding: 0.5rem 0.5rem 0 0.5rem;
   border-bottom: 1px solid rgb(195, 195, 195);
 }
 
-#lightbox-comments > .comment > #comment-header, #lightbox-comments > .comment > #comment-header > div {
+#lightbox-comments > #comments-list > .comment > #comment-header, #lightbox-comments > #comments-list > .comment > #comment-header > div {
   display: flex;
   gap: 1rem;
   align-items: center;
 
 }
 
-#lightbox-comments > .comment > #comment-header > img {
+#lightbox-comments > #comments-list > .comment > #comment-header > img {
   width: 2.5rem;
 }
 
-#lightbox-comments > .comment > #comment-header > div > #date {
+#lightbox-comments > #comments-list > .comment > #comment-header > div > #date {
   font-family: "Raleway italic";
   color: rgb(87, 85, 85);
 }
 
-#lightbox-comments > .comment > #comment-content {
+#lightbox-comments > #comments-list > .comment > #comment-content {
   padding: 0.5rem;
 }
 
