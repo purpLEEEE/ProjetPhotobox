@@ -1,6 +1,5 @@
 import photoloader from './photoloader.js'
 import lightbox_ui from './lightbox_ui.js'
-import config from './config.js'
 import gallery from './gallery.js'
 import gallery_ui from './gallery_ui.js';
 
@@ -19,6 +18,7 @@ let load = (node) => {
   photoloader.loadResource(uri)
   .then(response => { // premiere reponse avec les donnees de la photo
     current_image_data = response
+
     // on recupere les commentaires de cette photo grace a ces donnees recus
     return photoloader.loadResource(current_image_data.links.comments.href)
   })
@@ -37,11 +37,31 @@ let load = (node) => {
  */
 export let submit_comment = (e) => {
   e.preventDefault()
-  fetch (config.photobox_url + current_image_data.links.comments.href, {
-    method: 'POST',
-    body: new FormData(e.target)
+
+  photoloader.postResource(e, current_image_data.links.comments.href)
+  .then(response => { // ajout du commentaire dans le DOM
+    let comment = response.comment
+    let comment_html = `
+      <div id="comment-header">
+        <img src="/img/user.svg">
+        <div>
+          <p><strong>${comment.pseudo}</strong> </p>
+          <p> ${comment.titre} </p>
+          <p id="date">posted the ${comment.date} </p>
+        </div>
+      </div>
+      <div id="comment-content">
+        <p> ${comment.content} </p>
+      </div>
+    `
+    let comment_element = document.createElement('div')
+    comment_element.setAttribute('class', 'comment')
+    comment_element.innerHTML = comment_html
+
+    document.querySelector('#comments-list').prepend(comment_element)
+    alert('Commentaire posté.')
   })
-  .then(() => alert("Votre commentaire a bien été posté. Rechargez la page pour le voir apparaître."))
+
   return false
 }
 
