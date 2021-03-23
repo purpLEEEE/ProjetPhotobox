@@ -1,3 +1,5 @@
+import lightbox from "./lightbox.js";
+
 /**
  * recoit les donnees d'une image et affichage la lightbox de celle-ci
  * @param { Object } data donnees de l'image a afficher
@@ -28,7 +30,6 @@ let display_lightbox = (data) => {
         </div>
         <div id="lightbox-comments">
           <h1>Comments</h1>
-
   `
 
   data.comments.forEach(comment => {
@@ -43,13 +44,35 @@ let display_lightbox = (data) => {
           </div>
         </div>
         <div id="comment-content">
-       
           <p> ${comment.content} </p>
         </div>
-      </div> 
+      </div>
     `
   });
 
+  html += `
+    <div id="comment-post">
+      <h1> Post a comment </h1>
+      <form id="post-form">
+        <div class="form-group">
+          <label for="pseudo"> Your name </label>
+          <input type="text" name="pseudo" id="pseudo" placeholder="Example : SinGri5457">
+        </div>
+
+        <div class="form-group">
+          <label for="titre"> Your comment title </label>
+          <input type="text" name="titre" id="content" placeholder="Example : How this cat be so cut ?">
+        </div>
+
+        <div class="form-group">
+          <label for="content"> Your comment content </label>
+          <textarea id="content" name="content" placeholder="Example : I never saw this kind of cat before, it is so beautiful ...."> </textarea>
+        </div>
+
+        <button type="submit"> Post </button>
+      </form>
+    </div>
+  `
   html += `   
       </div>
     </div>

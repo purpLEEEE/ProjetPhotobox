@@ -181,7 +181,7 @@ nav #next {
   border: 1px solid rgb(195, 195, 195);
 }
 
-#lightbox-details > #lightbox-commons-data > h1, #lightbox-comments > h1 {
+#lightbox-details > #lightbox-commons-data > h1, #lightbox-comments > h1, #comment-post > h1 {
   text-align: center;
 }
 
@@ -227,5 +227,38 @@ nav #next {
 #lightbox-comments > .comment > #comment-content {
   padding: 0.5rem;
 }
+
+#comment-post > form {
+  display: block;
+  width: 25vw;
+  margin: auto;
+}
+
+#comment-post > form > button {
+  padding: 0.3rem;
+  width: 5rem;
+  border-radius: 5px;
+  background-color: darkgray;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group > input, .form-group > textarea {
+  width: 25vw;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.form-group > textarea {
+  max-width: 25vw;
+  min-width: 25vw;
+}
+
 
 
