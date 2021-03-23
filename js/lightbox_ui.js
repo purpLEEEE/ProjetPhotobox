@@ -7,16 +7,19 @@ import lightbox from "./lightbox.js";
 let display_lightbox = (data) => {
   let html = `
   <div id="lightbox">
-    <div id="lightbox-head">
-        <h1 id="lightbox_title">${data.photo.titre}</h1>
-        <div id="lightbox_close">
-          <p>X</p>
-        </div>
-    </div>
+      <button id="fleche_gauche" type="button">Prev</button>
+      <button id="fleche_droite" type="button">Next</button>
+      <div id="lightbox-head">
+          <h1 id="lightbox_title">${data.photo.titre}</h1>
+          <div id="lightbox_close">
+            <p>X</p>
+          </div>
+      </div>
 
-    <div id="lightbox-img">
-        <img id="lightbox_full_img" src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/large/${data.photo.file}">
-    </div>
+      <div id="lightbox-img">
+          <img id="lightbox_full_img" src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/large/${data.photo.file}">
+      </div>
+      <div id="fleche_droite" class="fleche_droite">></div>
 
     <div id="lightbox-details">
         <div id="lightbox-commons-data">
@@ -31,7 +34,6 @@ let display_lightbox = (data) => {
         <div id="lightbox-comments">
           <h1>Comments</h1>
   `
-
   data.comments.forEach(comment => {
     html += `
       <div class="comment">
@@ -80,6 +82,8 @@ let display_lightbox = (data) => {
   `
   
   document.querySelector('#lightbox_container').innerHTML = html
+  document.querySelector('#fleche_gauche').addEventListener('click', lightbox.prev)
+  document.querySelector('#fleche_droite').addEventListener('click', lightbox.next)
   show()
   document.querySelector('#lightbox_close').addEventListener('click', hide)
 } 

@@ -1,6 +1,8 @@
 import photoloader from './photoloader.js'
 import lightbox_ui from './lightbox_ui.js'
 import config from './config.js'
+import gallery from './gallery.js'
+import gallery_ui from './gallery_ui.js';
 
 /**
  * donnees de l'image visualisee dans la lightbox
@@ -22,8 +24,8 @@ let load = (node) => {
   })
   .then(response => { 
     photo_comments = response
-     // on fusionne les deux reponses pour envoyer l'ensemble des donnees de la photo a l'affichage
-     current_image_data = Object.assign(current_image_data, photo_comments)
+    // on fusionne les deux reponses pour envoyer l'ensemble des donnees de la photo a l'affichage
+    current_image_data = Object.assign(current_image_data, photo_comments)
     lightbox_ui.display_lightbox(current_image_data)
     document.querySelector('#post-form').addEventListener('submit', (e) => submit_comment(e))
   })
@@ -43,7 +45,37 @@ export let submit_comment = (e) => {
   return false
 }
 
+/**
+ * Permet de passer à la lightbox suivante
+ * Si pas de lightbox suivante on passe à la première de la page suivante
+ */
+let next = async () => {
+  let vignetteSuivante = gallery_ui.getVignetteCourante().nextElementSibling
+  if(vignetteSuivante === null){
+    await gallery.next().then(gallery_ui.display_gallery)
+    vignetteSuivante = document.querySelector('#gallery_container').firstElementChild
+  }
+  gallery_ui.setVignetteCourante(vignetteSuivante)
+  return load(vignetteSuivante.firstElementChild)
+}
+
+/**
+ * Permet de passer à la lightbox précédente
+ * Si pas de lightbox précédente on passe à la dernière de la page précédente
+ */
+let prev = async () => {
+  let vignettePrecedente = gallery_ui.getVignetteCourante().previousElementSibling
+  if(vignettePrecedente === null){
+    await gallery.prev().then(gallery_ui.display_gallery)
+    vignettePrecedente = document.querySelector('#gallery_container').lastElementChild
+  }
+  gallery_ui.setVignetteCourante(vignettePrecedente)
+  return load(vignettePrecedente.firstElementChild)
+}
+
 export default {
   load,
-  submit_comment
+  submit_comment,
+  next,
+  prev
 }

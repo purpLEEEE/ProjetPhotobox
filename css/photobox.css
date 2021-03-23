@@ -134,6 +134,10 @@ nav #next {
     height: 100%;
 }
 
+#lightbox > navigation{
+  display : flex;
+}
+
 #lightbox-img {
     width: 100%;
     height: 80%;

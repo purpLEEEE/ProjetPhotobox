@@ -26,9 +26,11 @@ document.querySelector('#load_gallery')
  */
 document.querySelector('#next')
   .addEventListener('click', e => {
-    gallery.next().then(response => {
-      gallery_ui.display_gallery(response)
-    })
+    if(gallery.galerieCharge()){
+      gallery.next().then(response => {
+        gallery_ui.display_gallery(response)
+      })
+    }
   })
 
 /**
@@ -36,9 +38,11 @@ document.querySelector('#next')
  */
 document.querySelector('#previous')
 .addEventListener('click', e => {
-  gallery.prev().then(response => {
-    gallery_ui.display_gallery(response)
-  })
+  if(gallery.galerieCharge()){
+    gallery.prev().then(response => {
+      gallery_ui.display_gallery(response)
+    })
+  }
 })
 
 /**
@@ -46,9 +50,11 @@ document.querySelector('#previous')
  */
 document.querySelector('#first')
 .addEventListener('click', e => {
-  gallery.first().then(response => {
-    gallery_ui.display_gallery(response)
-  })
+  if(gallery.galerieCharge()){
+    gallery.first().then(response => {
+      gallery_ui.display_gallery(response)
+    })
+  }
 })
 
 /**
@@ -56,7 +62,9 @@ document.querySelector('#first')
  */
 document.querySelector('#last')
 .addEventListener('click', e => {
-  gallery.last().then(response => {
-    gallery_ui.display_gallery(response)
-  })
+  if(gallery.galerieCharge()){
+    gallery.last().then(response => {
+      gallery_ui.display_gallery(response)
+    })
+  }
 })
