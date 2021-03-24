@@ -70,13 +70,13 @@ export let submit_comment = (e) => {
  * Si pas de lightbox suivante on passe à la première de la page suivante
  */
 let next = async () => {
-  let vignetteSuivante = gallery_ui.getVignetteCourante().nextElementSibling
-  if(vignetteSuivante === null){
+  let lightboxSuivante = gallery_ui.getLightboxCourante().nextElementSibling
+  if(lightboxSuivante === null){
     await gallery.next().then(gallery_ui.display_gallery)
-    vignetteSuivante = document.querySelector('#gallery_container').firstElementChild
+    lightboxSuivante = document.querySelector('#gallery_container').firstElementChild
   }
-  gallery_ui.setVignetteCourante(vignetteSuivante)
-  return load(vignetteSuivante.firstElementChild)
+  gallery_ui.setLightboxCourante(lightboxSuivante)
+  return load(lightboxSuivante.firstElementChild)
 }
 
 /**
@@ -84,13 +84,13 @@ let next = async () => {
  * Si pas de lightbox précédente on passe à la dernière de la page précédente
  */
 let prev = async () => {
-  let vignettePrecedente = gallery_ui.getVignetteCourante().previousElementSibling
-  if(vignettePrecedente === null){
+  let lightboxPrecedente = gallery_ui.getLightboxCourante().previousElementSibling
+  if(lightboxPrecedente === null){
     await gallery.prev().then(gallery_ui.display_gallery)
-    vignettePrecedente = document.querySelector('#gallery_container').lastElementChild
+    lightboxPrecedente = document.querySelector('#gallery_container').lastElementChild
   }
-  gallery_ui.setVignetteCourante(vignettePrecedente)
-  return load(vignettePrecedente.firstElementChild)
+  gallery_ui.setLightboxCourante(lightboxPrecedente)
+  return load(lightboxPrecedente.firstElementChild)
 }
 
 export default {

@@ -1,6 +1,6 @@
 import lightbox from './lightbox.js'
 
-let vignetteCourante = null;
+let lightboxCourante = null;
 
 /**
  * Ajoute et affiche le markup HTML de la galerie courante
@@ -27,19 +27,19 @@ let display_picture = (global_picture) => {
   picture_container.innerHTML = picture_content
   picture_container.classList.add('vignette')
   picture_container.addEventListener('click', (e) => {
-    vignetteCourante = picture_container
+    lightboxCourante = picture_container
     lightbox.load(e.target)
   })
   return picture_container
 }
 
-let getVignetteCourante = () => {return vignetteCourante}
+let getLightboxCourante = () => {return lightboxCourante}
 
-let setVignetteCourante = (vignette) => {vignetteCourante = vignette}
+let setLightboxCourante = (lightbox) => {lightboxCourante = lightbox}
 
 
 export default {
   display_gallery,
-  getVignetteCourante,
-  setVignetteCourante
+  getLightboxCourante,
+  setLightboxCourante
 }
