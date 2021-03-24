@@ -67,16 +67,16 @@ export let submit_comment = (e) => {
 
 /**
  * Permet de passer à la lightbox suivante
- * Si pas de lightbox suivante on passe à la première de la page suivante
+ * Si pas de lightbox suivante on passe à la première image de la page suivante
  */
 let next = async () => {
-  let lightboxSuivante = gallery_ui.getLightboxCourante().nextElementSibling
-  if(lightboxSuivante === null){
+  let lightbox_suiv = gallery_ui.getLightboxCourante().nextElementSibling
+  if(lightbox_suiv === null){
     await gallery.next().then(gallery_ui.display_gallery)
-    lightboxSuivante = document.querySelector('#gallery_container').firstElementChild
+    lightbox_suiv = document.querySelector('#gallery_container').firstElementChild
   }
-  gallery_ui.setLightboxCourante(lightboxSuivante)
-  return load(lightboxSuivante.firstElementChild)
+  gallery_ui.setLightboxCourante(lightbox_suiv)
+  return load(lightbox_suiv.firstElementChild)
 }
 
 /**
@@ -84,13 +84,13 @@ let next = async () => {
  * Si pas de lightbox précédente on passe à la dernière de la page précédente
  */
 let prev = async () => {
-  let lightboxPrecedente = gallery_ui.getLightboxCourante().previousElementSibling
-  if(lightboxPrecedente === null){
+  let lightbox_prec = gallery_ui.getLightboxCourante().previousElementSibling
+  if(lightbox_prec === null){
     await gallery.prev().then(gallery_ui.display_gallery)
-    lightboxPrecedente = document.querySelector('#gallery_container').lastElementChild
+    lightbox_prec = document.querySelector('#gallery_container').lastElementChild
   }
-  gallery_ui.setLightboxCourante(lightboxPrecedente)
-  return load(lightboxPrecedente.firstElementChild)
+  gallery_ui.setLightboxCourante(lightbox_prec)
+  return load(lightbox_prec.firstElementChild)
 }
 
 export default {

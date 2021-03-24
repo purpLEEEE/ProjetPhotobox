@@ -1,7 +1,14 @@
 import photoloader from './photoloader.js'
 
+/**
+ * galerie contenant la liste des photos
+ */
 let galerie = null
-let galerieEstNull = true;
+
+/**
+ * permet de savoir si la gallerie contient des photos
+ */
+let galerie_est_null = true;
 
 /**
  * Charge et retourne la gallerie, stocke les donnees 
@@ -11,7 +18,7 @@ let load = (uri) => {
   let promise = photoloader.loadResource(uri)
   promise.then(gal => {
     galerie = gal
-    galerieEstNull = false;
+    galerie_est_null = false;
   })
   return promise
 }
@@ -56,7 +63,7 @@ let last = () => {
  * Përmet de savoir si la galerie a été chargé
  */
 let galerieCharge = () => {
-  return !galerieEstNull;
+  return !galerie_est_null;
 }
 
 export default {
